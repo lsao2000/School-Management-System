@@ -1,38 +1,77 @@
 public class Student {
-    private int id;
-    private String name;
+    private final int id;
+    private final String name;
     private double grade;
-    private double feesPaid = 0;
-    private double feesTotal= 30000;
-    /**
-     * @param id    identification of the student: unique.
-     * @param name  name of the student.
-     * @param grade grade of the student.
-     */
+    private int feesPaid;
+    private final int feesTotal;
 
+    /**?
+     * this for intialize the param for every instance
+     * @param id the identification of the student
+     * @param name the name of this student
+     * @param grade the grade of every student
+     */
     public Student(int id, String name, double grade){
+        this.feesPaid = 0;
+        this.feesTotal = 30000;
         this.id    = id;
         this.name  = name;
         this.grade = grade;
     }
 
     /**
-     * @param grade update the grade of the student.
+     * User to update the student's grade.
+     * @param grade new grade at the student.
      */
-    public void setGrade(double grade){
+    public void setGrade(int grade){
         this.grade = grade;
     }
 
     /**
-     * update the fees of student.
-     * @param fees set new value of fees student.
+     * This function is for updating the student fees.
+     * @param fees the fees that the student pays.
      */
-    public void updateFeesPaid(double fees){
+    public void updateFessPaid(int fees){
         feesPaid += fees;
-//        if (feesTotal - feesPaid >= 0){
-//        }else {
-//            System.out.println("the fees are already paid");
-//        }
     }
 
+    /**
+     *
+     * @return id of the student.
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     *
+     * @return name of the student.
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     *
+     * @return Grade of the student.
+     */
+    public double getGrade() {
+        return grade;
+    }
+
+    /**
+     *
+     * @return fees paid by the student.
+     */
+    public int getFeesPaid() {
+        return feesPaid;
+    }
+
+    /**
+     *
+     * @return The total fees of the student.
+     */
+    public int getFeesTotal() {
+        return feesTotal;
+    }
 }
