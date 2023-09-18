@@ -11,19 +11,23 @@ public class Main {
         /*
           List of the teachers in the school.
          */
-        List<Teacher> teachers = new ArrayList<>();
-        teachers.add(lezly);
-        teachers.add(ashly);
-        teachers.add(tommy);
+        List<Teacher> teachersList = new ArrayList<>();
+        teachersList.add(lezly);
+        teachersList.add(ashly);
+        teachersList.add(tommy);
         /*
           List of the student in the school.
          */
-        List<Student> students = new ArrayList<>();
-        students.add(jifry);
-        students.add(wisly);
-        students.add(stephen);
-        School med5 = new School(teachers,students);
-        for(Teacher teacher:teachers) med5.updateTotalMoneySpent(teacher.getSalary());
+        List<Student> studentsList = new ArrayList<>();
+        studentsList.add(jifry);
+        studentsList.add(wisly);
+        studentsList.add(stephen);
+        School med5 = new School(teachersList,studentsList);
+        for(Teacher teacher:teachersList) med5.updateTotalMoneySpent(teacher.getSalary());
+        med5.AllMoney();
+        jifry.PayFess(2000);
+        wisly.PayFess(5000);
+        stephen.PayFess(1500);
         med5.AllMoney();
     }
 
