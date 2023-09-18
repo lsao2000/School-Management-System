@@ -2,8 +2,8 @@ import java.util.List;
 public class School {
     private List<Teacher> teachers;
     private List<Student> students;
-    private int totalMoneyEarned;
-    private int totalMoneySpent;
+    private static int totalMoneyEarned;
+    private static int totalMoneySpent;
     public School(List<Teacher> teachers, List<Student> students){
         this.teachers    = teachers;
         this.students    = students;
@@ -48,10 +48,10 @@ public class School {
 
     /**
      *
-     * @param totalMoneyEarned Update the total money earned
+     * @param MoneyEarned Update the total money earned
      */
-    public void updateTotalMoneyEarned(int totalMoneyEarned){
-        this.totalMoneyEarned += totalMoneyEarned;
+    public static void updateTotalMoneyEarned(int MoneyEarned){
+        totalMoneyEarned += MoneyEarned;
     }
 
     /**
@@ -66,13 +66,13 @@ public class School {
      *
      * @param MoneySpent update the total money spent
      */
-    public void updateTotalMoneySpent(int MoneySpent){
+    public static void updateTotalMoneySpent(int MoneySpent){
         totalMoneySpent += MoneySpent;
     }
     public void AllMoney(){
-        System.out.println("The total money spent is : "+ totalMoneySpent);
-        System.out.println("The total money earned without tax and pays teacher : "+ totalMoneyEarned);
-        System.out.println("The total money earned with tax and pays teacher : "+ (totalMoneyEarned-totalMoneySpent));
+        System.out.println("The total money spent is : $"+ totalMoneySpent);
+        System.out.println("The total money earned without tax and pays teacher : $"+ totalMoneyEarned);
+        System.out.println("The total money earned with tax and pays teacher : $"+ (totalMoneyEarned-totalMoneySpent));
     }
 
 

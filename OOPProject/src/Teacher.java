@@ -1,7 +1,8 @@
 public class Teacher {
     private final int id;
     private final String name;
-    private final int Salary;
+    private int Salary;
+    private int SalaryEarned;
 
     /**
      * This for set the name of the teacher and the identification in every instance.
@@ -9,9 +10,10 @@ public class Teacher {
      * @param name The name of the teacher.
      */
     public Teacher(int id, String name, int salary){
-        this.id     = id;
-        this.name   = name;
-        this.Salary = salary;
+        this.id           = id;
+        this.name         = name;
+        this.Salary       = salary;
+        this.SalaryEarned = 0;
     }
 
     /**
@@ -36,5 +38,16 @@ public class Teacher {
      */
     public int getSalary(){
         return Salary;
+    }
+    public void setSalary(int salary){
+        this.Salary += salary;
+    }
+    /***
+     * adds to salary.
+     * @param salary Removes from the total money earned by the school.
+     */
+    public void receiveSalary(int salary){
+        SalaryEarned += salary;
+        School.updateTotalMoneySpent(salary);
     }
 }
