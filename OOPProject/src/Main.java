@@ -2,9 +2,9 @@ import java.util.List;
 import java.util.ArrayList;
 public class Main {
     public static void main(String[] args){
-        Teacher lezly = new Teacher(1,"lezly", 1000);
-        Teacher ashly = new Teacher(2, "ashly", 600);
-        Teacher tommy = new Teacher(3, "tommy", 1200);
+        Teacher lezly   = new Teacher(1,"lezly", 1000);
+        Teacher ashly   = new Teacher(2, "ashly", 600);
+        Teacher tommy   = new Teacher(3, "tommy", 1200);
         Student jifry   = new Student(1,"jefry",14);
         Student wisly   = new Student(2, "wisly", 13);
         Student stephen = new Student(3, "stephen", 9);
@@ -24,11 +24,15 @@ public class Main {
         studentsList.add(stephen);
         School med5 = new School(teachersList,studentsList);
         for(Teacher teacher:teachersList) med5.updateTotalMoneySpent(teacher.getSalary());
-        med5.AllMoney();
-        jifry.PayFess(2000);
+        jifry.PayFess(6000);
         wisly.PayFess(5000);
         stephen.PayFess(1500);
+        System.out.println("~~~~~~Making School Pay Salary~~~~~~");
+        lezly.receiveSalary(lezly.getSalary());
+        System.out.println(jifry);
+        ashly.receiveSalary(ashly.getSalary());
+        System.out.println(ashly);
+        System.out.println(lezly);
         med5.AllMoney();
     }
-
 }

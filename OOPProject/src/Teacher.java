@@ -48,6 +48,15 @@ public class Teacher {
      */
     public void receiveSalary(int salary){
         SalaryEarned += salary;
+        School.setTotalMoneySpent(salary);
         School.updateTotalMoneySpent(salary);
+
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher " +
+                "name : " + name  +
+                ", SalaryEarned : $" + SalaryEarned ;
     }
 }
