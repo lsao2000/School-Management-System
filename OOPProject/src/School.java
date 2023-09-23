@@ -62,17 +62,20 @@ public class School {
         return totalMoneySpent;
     }
 
+    public static void setTotalMoneySpent(int totalmoneyspent) {
+        totalMoneySpent += totalmoneyspent;
+    }
+
     /**
      *
      * @param MoneySpent update the total money spent
      */
     public static void updateTotalMoneySpent(int MoneySpent){
-        totalMoneySpent += MoneySpent;
+        totalMoneyEarned -= MoneySpent;
     }
     public void AllMoney(){
         System.out.println("The total money spent is : $"+ totalMoneySpent);
-        System.out.println("The total money earned without tax and pays teacher : $"+ totalMoneyEarned);
-        System.out.println("The total money earned with tax and pays teacher : $"+ (totalMoneyEarned-totalMoneySpent));
+        System.out.println("The total money earned with tax and pays teacher : $"+ totalMoneyEarned);
     }
 
 
